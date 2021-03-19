@@ -40,10 +40,9 @@ public class WishListActivity extends AppCompatActivity {
             currentUserID = user.getUid();
         }
 
-        ArrayList<String> myWishList = (ArrayList<String>) getIntent().getSerializableExtra("myWatchlist");
+       ArrayList<String> myWishList = (ArrayList<String>) getIntent().getSerializableExtra("myWatchlist");
 
         mlistView  = (ListView) findViewById(R.id.lvWishlist);
-
 
         // String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
         // "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",

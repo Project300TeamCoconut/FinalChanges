@@ -2,7 +2,7 @@ package com.project300.movieswipe;
 
 public class MovieModelClass {
 
-    //String id;
+    String id;
     String name;
     String img;
 
@@ -15,9 +15,10 @@ public class MovieModelClass {
 
     }
 
-    //   public void setId(String id) {
-    //   this.id = id;
-    //   }
+       public void setId(String id) {
+        this.id = id;
+       }
+
 
     public void setName(String name) {
         this.name = name;
@@ -27,9 +28,9 @@ public class MovieModelClass {
         this.img = img;
     }
 
-    //  public String getId() {
-    //     return id;
-    //  }
+     public String getId() {
+    return id;
+      }
 
     public String getName() {
         return name;

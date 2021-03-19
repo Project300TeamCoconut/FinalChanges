@@ -190,6 +190,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void goSearch(View view) {
+        Intent iSearch = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(iSearch);
+    }
+
     public void GettingUserID(View view) {
 
         MatchFriendID = GetUserID.getText().toString();
@@ -254,10 +259,9 @@ public class MainActivity extends AppCompatActivity {
     }
     // go to wish list activity
     public void goToWishList(View view) {
-        Intent intent = new Intent(getApplicationContext(), WishListActivity.class);
-
+        Intent intent = new Intent(getApplicationContext(), WishlistActivity2.class);
         //pass the myWishList to the wish list activity
-        intent.putExtra("myWatchlist", myWishList);
+       intent.putExtra("myWatchlist", myWishList);
         startActivity(intent);
     }
 
