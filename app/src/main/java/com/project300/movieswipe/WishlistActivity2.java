@@ -1,9 +1,5 @@
 package com.project300.movieswipe;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -48,11 +49,10 @@ public class WishlistActivity2 extends AppCompatActivity {
 
     String friendID;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wishlist2);
+        setContentView(R.layout.activity_wishlist);
 
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
 //        Toast.makeText(this, "" + currentFirebaseUser.getUid(), Toast.LENGTH_SHORT).show();
@@ -60,7 +60,7 @@ public class WishlistActivity2 extends AppCompatActivity {
         progressOverlay = findViewById(R.id.progress_overlay);
 
         context = this.context;
-      //  btnDelete = findViewById(R.id.btnDelete);
+        btnDelete = findViewById(R.id.btnDelete);
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -73,6 +73,35 @@ public class WishlistActivity2 extends AppCompatActivity {
         matchName = findViewById(R.id.MatchName);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+
+
+//        mRecyclerView.setFocusable(false);
+
+//        mRecyclerView.addOnItemTouchListener(
+//                new RecyclerItemClickListener(context, mRecyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+//                    @Override public void onItemClick(View view, int position) {
+//                    }
+//
+//                    @Override public void onLongItemClick(View view, int position) {
+//                        currentMovie = ((TextView) mRecyclerView.findViewHolderForAdapterPosition(position).itemView.findViewById(R.id.MatchName)).getText().toString();
+//                        Toast.makeText(getApplicationContext(), currentMovie, Toast.LENGTH_SHORT).show();
+//                        counter = counter + 1;
+//
+//                    }
+//                })
+//        );
+
+        //this will allow us to scroll freely through the recycler view with no hicups
+        mRecyclerView.setNestedScrollingEnabled(false);
+        mRecyclerView.setHasFixedSize(true);
+
+
+        //set a linear layout manager
+        mWishlistLayoutManager = new LinearLayoutManager(WishlistActivity2.this);
+
+        //pass this layout manager to the recycler view
+        mRecyclerView.setLayoutManager(mWishlistLayoutManager);
+
 
         //adapter
         mWishlistAdapter = new WishlistAdapter(getDataSetWishlist(), WishlistActivity2.this);
@@ -87,6 +116,8 @@ public class WishlistActivity2 extends AppCompatActivity {
         {
 
         }
+
+
     }
 
     private void getUserMatchId() {

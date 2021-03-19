@@ -3,6 +3,7 @@ package com.project300.movieswipe;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,8 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class WishlistViewHolders extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView mMatchName;
-    public Button mDeleteButton;
+    public ImageButton mDeleteButton;
     public Integer counter;
+
 
 
     public WishlistViewHolders(@NonNull View itemView) {
@@ -22,13 +24,14 @@ public class WishlistViewHolders extends RecyclerView.ViewHolder implements View
 
         // mMatchId = (TextView) itemView.findViewById(R.id.Matchid);
         mMatchName = (TextView) itemView.findViewById(R.id.MatchName);
-        mDeleteButton = (Button) itemView.findViewById(R.id.btnDelete);
+        mDeleteButton = (ImageButton) itemView.findViewById(R.id.btnDelete);
+
 
     }
 
     @Override
     public void onClick(View v) {
-        mDeleteButton.setText("Are you Sure?");
+        //mDeleteButton.setText("Are you Sure?");
 //        counter = counter + 1;
         itemView.setBackgroundColor(Color.parseColor("#348ceb"));
 
@@ -39,7 +42,4 @@ public class WishlistViewHolders extends RecyclerView.ViewHolder implements View
 //            counter = 0;
 //        }
     }
-
-
-
 }

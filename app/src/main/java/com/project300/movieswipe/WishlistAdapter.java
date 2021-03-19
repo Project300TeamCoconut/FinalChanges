@@ -1,5 +1,6 @@
 package com.project300.movieswipe;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class WishlistAdapter  extends RecyclerView.Adapter<WishlistViewHolders>{
+//this is the function that takes care of populating itemmatches.xml with the specific layout
+public class WishlistAdapter extends RecyclerView.Adapter<WishlistViewHolders>{
+
 
     private List<WishlistObject> wishlistList;
     private Context context;
@@ -22,7 +25,6 @@ public class WishlistAdapter  extends RecyclerView.Adapter<WishlistViewHolders>{
 
         this.context = context;
     }
-
     @NonNull
     @Override
     public WishlistViewHolders onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,7 +41,6 @@ public class WishlistAdapter  extends RecyclerView.Adapter<WishlistViewHolders>{
 
         return rcv;
     }
-
     //onbindviewholder takes care of populating the view holder with the params we passed into
     //on create view holder
 
@@ -69,6 +70,5 @@ public class WishlistAdapter  extends RecyclerView.Adapter<WishlistViewHolders>{
     public int getItemCount() {
         return wishlistList.size();
     }
-
 
 }

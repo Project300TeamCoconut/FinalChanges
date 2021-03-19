@@ -106,4 +106,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onStop();
         mAuth.removeAuthStateListener(firebaseAuthStateListener);
     }
+
+    public void goBack(View view) {
+
+        Intent intent = new Intent(this, ChooseLoginRegistrationActivity.class);
+        startActivity(intent);
+    }
 }
