@@ -35,7 +35,7 @@
         android:layout_marginStart="49dp"
         android:layout_marginTop="135dp"
         android:layout_marginEnd="50dp"
-        android:text="WISH LIST"
+        android:text="Watch List"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="36sp"

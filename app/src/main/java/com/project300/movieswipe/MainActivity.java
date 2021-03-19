@@ -193,7 +193,8 @@ public class MainActivity extends AppCompatActivity {
     public void GettingUserID(View view) {
 
         MatchFriendID = GetUserID.getText().toString();
-         GetUserID.setText("");
+        GetUserID.setText("");
+
 
     }
 
